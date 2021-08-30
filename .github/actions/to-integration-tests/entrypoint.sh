@@ -52,7 +52,7 @@ start_traffic_vault() {
 	BASH_LINES
 
   #psql -d <user>://<dbname>:<password>:<port>/<?>
-	psql -d traffic_vault://traffic_vault:twelve@localhost:5432/traffic_vault < db/trafficvault/create_tables.sql > /dev/null
+	psql -d traffic_vault://traffic_vault:twelve@localhost:5432/traffic_vault < {GITHUB_WORKSPACE}/traffic_ops/app/db/trafficvault/create_tables.sql > /dev/null
 
 }
 truncate -s0 "${ciab_dir}/traffic.vault.logs";
