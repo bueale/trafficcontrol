@@ -52,6 +52,7 @@ start_traffic_vault() {
 	BASH_LINES
 
   #psql -d <user>://<dbname>:<password>:<port>/<?>
+  cd traffic_ops/app
 	psql -d traffic_vault://traffic_vault:twelve@localhost:5432/traffic_vault < {GITHUB_WORKSPACE}/traffic_ops/app/db/trafficvault/create_tables.sql > /dev/null
 
 }
