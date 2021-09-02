@@ -52,8 +52,7 @@ start_traffic_vault() {
 	BASH_LINES
 
   #psql -d <user>://<dbname>:<password>@<host>:<port>/<?> < <tables-doc> > /dev/null
-	sudo /lib/systemd/system/postgresql.service start
-	service postgresql status
+	apk add --no-cache postgresql-client
   	cd traffic_ops/app
 	psql -d traffic_vault://traffic_vault:twelve@172.17.0.1:5432/traffic_vault < db/trafficvault/create_tables.sql > /dev/null
 
